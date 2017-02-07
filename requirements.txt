@@ -1,0 +1,1 @@
+pip install https://github.com/devttys0/binwalk/archive/master.zip
