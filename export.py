@@ -88,7 +88,7 @@ def main(argv):
 		print "analysis... %d" % (x + 1)
 		path = "image-download/%d" % (x + 1)
 		for module in binwalk.scan(path, signature=True, quiet=True, extract=True):
-			result = module.results[2]
+			result = module.results[3]
 			os.system("dd if=%s bs=1 skip=%d of=image/%d.jpg" % (path, result.offset, x + 1))
 
 if __name__ == '__main__':
