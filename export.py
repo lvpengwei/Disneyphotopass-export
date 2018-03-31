@@ -42,7 +42,9 @@ def getData(tokenId):
             photo = photos[x]
             if photo["enImage"]:
                 thumbnail = photo["thumbnail"]
-                en1024 = thumbnail["en1024"]
+                en1024 = thumbnail.get("en1024", "not exist")
+                if en1024 == "not exist":
+                    continue
                 url = en1024["url"]
                 if not url:
                     continue
